@@ -10,12 +10,11 @@ import numpy as np
 app = dash.Dash(__name__)
 server = app.server
 #CREATE DF
-df = pd.read_csv('https://raw.githubusercontent.com/guiconci/wb_plan/main/plan1.csv')
-df.set_index('id',inplace=True, drop=False)
+df = pd.read_csv('https://raw.githubusercontent.com/guiconci/test_app/main/plan.csv')
 
 
 df2 = pd.read_csv('https://raw.githubusercontent.com/guiconci/test_app/main/plan_2.csv')
-df2.set_index('id',inplace=True, drop=False)
+
 
 
 #CONSOLIDATE GRADING
