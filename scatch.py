@@ -7,17 +7,15 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import numpy as np
-from quick_srt import df
+from quick_srt import df, df2
 
-print(df)
+
 app = dash.Dash(__name__)
 
 #CREATE DF
-df = pd.read_csv('plan.csv')
 df.set_index('id',inplace=True, drop=False)
 
 
-df2 = pd.read_csv('plan_2.csv')
 df2.set_index('id',inplace=True, drop=False)
 
 
@@ -319,7 +317,7 @@ app.layout = html.Div(
 
 # html.Div(style= {"border-right":'solid',"border-right-width":"2px", "border-right-color":"black"},
     
-#if __name__ == '__main__':
-#    app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=True)
 
 
