@@ -7,16 +7,39 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import numpy as np
-from quick_srt import df, df2
+from oauth2client.service_account import ServiceAccountCredentials
+import gspread
 
 
 app = dash.Dash(__name__)
 server = app.server
 
 #CREATE DF
+# define the scope
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+
+# add credentials to the account
+creds = ServiceAccountCredentials.from_json_keyfile_name('sheets-python-eec00310b52c.json', scope)
+
+# authorize the clientsheet 
+client = gspread.authorize(creds)
+
+# get the instance of the Spreadsheet
+sheet = client.open('plan_retan')
+
+# get the first sheet of the Spreadsheet
+sheet_instance = sheet.get_worksheet(0)
+sheet_instance2 = sheet.get_worksheet(1)
+
+# get all the records of the data
+records_data = sheet_instance.get_all_records()
+records_data2 = sheet_instance2.get_all_records()
+
+# convert the json to dataframe
+df = pd.DataFrame.from_dict(records_data)
 df.set_index('id',inplace=True, drop=False)
 
-
+df2 = pd.DataFrame.from_dict(records_data2)
 df2.set_index('id',inplace=True, drop=False)
 
 
