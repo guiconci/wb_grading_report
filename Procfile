@@ -1,1 +1,1 @@
-web: gunicorn scatch:server
+web: gunicorn app:server
