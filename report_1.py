@@ -7,10 +7,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import numpy as np
-from quick_srt import df
 
-print(df)
 app = dash.Dash(__name__)
+
 
 #CREATE DF
 df = pd.read_csv('plan.csv')
