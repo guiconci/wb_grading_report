@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 
 app = dash.Dash(__name__)
+server = app.server
 
 
 #CREATE DF

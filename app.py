@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 from quick_srt import df, df2
 
+
 app = dash.Dash(__name__)
 server = app.server
 
