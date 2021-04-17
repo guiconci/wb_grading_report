@@ -318,7 +318,7 @@ app.layout = html.Div(
 
 # html.Div(style= {"border-right":'solid',"border-right-width":"2px", "border-right-color":"black"},
     
-#if __name__ == '__main__':
-#    app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=True)
 
 
