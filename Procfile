@@ -1,1 +1,1 @@
-web: gunicorn scatch:server
+web: gunicorn --workers 1 scatch:server
