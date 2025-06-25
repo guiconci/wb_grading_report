@@ -1,10 +1,10 @@
+# app.py
 import dash
 from dash.dependencies import Input, Output
-from dash_html_components.Div import Div
 import dash_table
 from dash_table import DataTable, FormatTemplate
 import dash_core_components as dcc
-import dash_html_components as html
+from dash import html
 import pandas as pd
 import numpy as np
 from quick_srt import df, df2
